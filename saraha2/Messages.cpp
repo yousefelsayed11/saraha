@@ -6,7 +6,7 @@
 using namespace std;
 
 
-void Messages::sendMessage(string& senderUsername, int senderid, string& receiverUsername, string& content, vector<string>& registeredUsernames, vector<User*>& allUsers) {
+void Messages::sendMessage(string& senderUsername,int senderid, string& receiverUsername, string& content, vector<string>& registeredUsernames, vector<User*>& allUsers) {
     for (User* u : allUsers) {
 
         if (u->getName() == receiverUsername) {
@@ -21,12 +21,12 @@ void Messages::sendMessage(string& senderUsername, int senderid, string& receive
         }
     }
 
-    Message msg(senderUsername, senderid, receiverUsername, content);
+    Message msg(senderUsername, senderid,receiverUsername, content);
     sentMessages.push_back(msg);
     receivedMessages[receiverUsername].push_back(msg);
     undoStack.push(msg);
     cout << "Message sent successfully!\n";
-
+    
 }
 bool Messages::undoLastSentMessage() {
     if (!undoStack.empty()) {
@@ -58,7 +58,7 @@ bool Messages::is_username_regiter(string username, vector<User*>& allUsers)
         registeredUsernames.push_back(name);
         if (name == username) {
             return true;
-
+              
         }
     }
     return false;

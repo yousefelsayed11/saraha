@@ -13,12 +13,12 @@ private:
     vector<Message> sentMessages;
     map<string, vector<Message>> receivedMessages;
     stack<Message> undoStack;
-
+  
 public:
     bool userExists = false;
     vector<string> registeredUsernames;
 
-
+   
     void sendMessage(string& senderUsername, int sendrid, string& receiverUsername, string& content, vector<string>& registeredUsernames, vector<User*>& allUsers);
     bool undoLastSentMessage();
     bool is_username_regiter(string username, vector<User*>& allUsers);
@@ -27,7 +27,7 @@ public:
     void viewSentMessages(string& currentUsername);
 
 private:
-    /* void viewReceivedMessagesFrom(string& viewerUsername, string& contactUsername);*/
+   /* void viewReceivedMessagesFrom(string& viewerUsername, string& contactUsername);*/
 
 public:
     void viewMyReceivedMessages(string& myUsername);

@@ -11,15 +11,15 @@ using namespace std;
 class User {
 private:
     pair<string, string> account; // email → hashed password
-
-    /* map<int, vector<Contacts>>contacts;*/
+   
+   /* map<int, vector<Contacts>>contacts;*/
     vector<Contacts> contacts;
     string gender;
     string name;
     int id;
     vector<int >blockUser;
 public:
-    map<int, int> senderMessageCount;
+     map<int, int> senderMessageCount;
     User() = default;
     User(std::string name, std::pair<std::string, std::string> credentials, std::string gender, int id);
     void setAccount(pair<string, string> accountPair);
@@ -33,11 +33,11 @@ public:
     void setblockUser(vector<int >newblockUser);
     vector<int>& getblockUser();
 
-
+  
     pair<string, string>& getAccount();
     void displayUser() const;
     bool login(const string& email, const string& password) const;
-    bool is_id_register(int id, vector<User*>& allUsers);
+    bool is_id_register(int id, vector<User*>& allUsers);              
     void addContact(int contactID);
     void removeContact(int contactID);
     void view_contact();

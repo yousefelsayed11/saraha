@@ -2,8 +2,8 @@
 #include "Message.h"
 #include <ctime>
 
-Message::Message(string sender, int sendrid, string receiver, string msg)
-    : senderUsername(sender), senderId(sendrid), receiverUsername(receiver), content(msg) {
+Message::Message(string sender, int sendrid, string receiver,  string msg)
+    : senderUsername(sender), senderId(sendrid),receiverUsername(receiver), content(msg) {
     timestamp = time(nullptr);
     date = ctime(&timestamp);
     date.pop_back();

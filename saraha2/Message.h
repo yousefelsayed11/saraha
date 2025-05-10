@@ -19,7 +19,7 @@ private:
 
 public:
 
-    Message(string sender, int sendrid, string receiver, string msg);
+    Message(string sender,int sendrid, string receiver, string msg);
 
     string getSenderUsername() const;
     string getReceiverUsername() const;

@@ -1,4 +1,4 @@
-#include "User.h"
+﻿#include "User.h"
 #include "Messages.h"
 #include "Contacts.h"
 #include <iostream>
@@ -69,7 +69,7 @@ void User::displayUser() const {
     cout << "Gender: " << gender << el;
     cout << "User ID: " << id << el;
     for (const auto& c : contacts)
-        cout << "Contact ID: " << c.id << el;
+        cout << "Contact ID: " << c.id<< el;
 }
 
 bool User::login(const string& email, const string& password) const {
@@ -118,7 +118,7 @@ void User::removeContact(int contactID)
 
 void User::view_contact()
 {
-
+ 
     if (contacts.empty()) {
         cout << "No contacts found.\n";
         return;
@@ -128,13 +128,13 @@ void User::view_contact()
         sortedMessages.push_back(pair);
     }
     sort(sortedMessages.begin(), sortedMessages.end(), [](const pair<int, int>& a, const pair<int, int>& b) {
-        return a.second > b.second;
+        return a.second > b.second; 
         });
 
     for (auto& pair : sortedMessages) {
-        cout << "Contact ID: " << pair.first << "  Messages: " << pair.second << endl;
+        cout << "Contact ID: " << pair.first << "  Messages: " << pair.second<< endl;
     }
-
+    
 }
 
 bool User::contactExists(int contactID)
@@ -169,7 +169,7 @@ void User::doB_User(int Id)
         string text = "done blocked the user : ";
         type(text);
         cout << Id << el;
-        /*  cout << blockUser.size();*/
+      /*  cout << blockUser.size();*/
     }
     else
     {
@@ -204,7 +204,7 @@ void User::view_user_is_blocked()
     for (int Id : blockUser) {
         cout << "- User ID: " << Id << endl;
     }
-
+    
 }
 
 
