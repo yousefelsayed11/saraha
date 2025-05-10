@@ -95,16 +95,18 @@ void Messages::viewSentMessages(string& currentUsername) {
     }
 }
 
+
+
 void Messages::viewReceivedMessageFrom(int senderId, string& receiverUsername) {
     auto it = receivedMessages.find(receiverUsername);
     if (it != receivedMessages.end()) {
         vector<Message>& msgs = it->second;
         bool found = false;
         for (Message& msg : msgs) {
-            if (msg.senderId == senderId) {
+            if (msg.getSenderId() == senderId) {
                 cout << "From: " << senderId << "\n";
                 cout << "Message: " << msg.getContent() << "\n";
-                cout << "Date: " << msg.date << "\n\n";
+                cout << "Date: " << msg.getDate() << "\n\n";
                 found = true;
             }
         }
@@ -115,6 +117,12 @@ void Messages::viewReceivedMessageFrom(int senderId, string& receiverUsername) {
         cout << "No messages received by " << receiverUsername << ".\n";
     }
 }
+
+void Messages::setSentMessages(vector<Message> msg)
+{
+    this->sentMessages = msg;
+}
+
 
 void Messages::viewMyReceivedMessages(string& myUsername) {
     auto it = receivedMessages.find(myUsername);
@@ -135,7 +143,7 @@ void Messages::viewMyReceivedMessages(string& myUsername) {
     }
 }
 
-vector<Message>& Messages::getSentMessages() {
+const vector<Message>& Messages::getSentMessages()const {
     return sentMessages;
 }
 

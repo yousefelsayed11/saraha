@@ -32,9 +32,9 @@ private:
 public:
     void viewMyReceivedMessages(string& myUsername);
 
-    vector<Message>& getSentMessages();
+   const vector<Message>& getSentMessages()const;
     void viewReceivedMessageFrom(int senderId, string& receiverUsername);
-
+    void setSentMessages(vector<Message> msg);
     map<string, vector<Message>>& getReceivedMessages();
 
 };
